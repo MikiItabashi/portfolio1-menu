@@ -1,0 +1,271 @@
+@charset "utf-8";
+$layout-width-inner:960px;
+//マップ型変数breakpointsを定義
+$breakpoints: ( 'sp': '(max-width: 600px)', 'pc': '(min-width: #{$layout-width-inner}))') !default;
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: sp) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+// ------------------
+// 共通
+// ------------------
+// $color-main:#fff;
+$color-text:#24292E;
+body {
+    font-family: 'メイリオ', 'Meiryo', 'ＭＳ ゴシック', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
+    font-size: 14.4px;
+    line-height: (21 / 14.4);
+    background: #fff;
+    color: $color-text;
+}
+
+.inner {
+    width: $layout-width-inner;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+a:hover {
+    color: inherit;
+    opacity: 0.8;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 65px;
+    text-align: center;
+    @include mq('sp') {
+        margin-bottom: 40px;
+    }
+}
+
+@include mq('sp') {
+    .sp-none {
+        display: none;
+    }
+}
+
+@include mq('pc') {
+    .pc-none {
+        display: none;
+    }
+}
+
+// ------------------
+// header
+// ------------------
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 120px 0 122px;
+    @include mq('sp') {
+        display: block;
+        text-align: center;
+        padding: 20px 0 15px;
+    }
+}
+
+.header-logo {
+    @include mq('sp') {
+        display: inline;
+    }
+}
+
+.header-nav {
+    ul {
+        display: flex;
+        li {
+            &:not(:first-child) {
+                margin-left: 30px;
+                @include mq('sp') {
+                    margin-left: 20px;
+                }
+            }
+            a {
+                img {}
+            }
+        }
+        @include mq('sp') {
+            justify-content: center;
+        }
+    }
+}
+
+.header-logo {
+    width: 120px;
+    height: auto;
+}
+
+// ------------------
+// main
+// ------------------
+.main {
+    height: 420px;
+    background: url(../img/keyboard-338505_1280.jpg) no-repeat bottom center / cover;
+}
+
+// ------------------
+// about
+// ------------------
+.about {
+    margin-top: 80px;
+}
+
+.about-body {
+    p {
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+    }
+}
+
+// ------------------
+// works
+// ------------------
+.works {
+    margin-top: 130px;
+    @include mq('sp') {
+        margin-top: 70px;
+    }
+}
+
+.works-body {}
+
+.works-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -23px;
+    @include mq('sp') {
+        display: block;
+    }
+}
+
+.work-item {
+    width: calc((100% - 24px * 2) / 3);
+    margin-top: 23px;
+    &:not(:nth-child(3n + 1)) {
+        margin-left: 24px;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    @include mq('sp') {
+        width: 100%;
+        &:not(:nth-child(3n + 1)) {
+            margin-left: 0;
+        }
+    }
+}
+
+// ------------------
+// news
+// ------------------
+.news {
+    margin-top: 130px;
+    @include mq('sp') {
+        margin-top: 70px;
+    }
+}
+
+.news-body {}
+
+.news-items {}
+
+.news-item {
+    display: flex;
+    border-bottom: #C8C8C8 1px solid;
+    border-top: #C8C8C8 1px solid;
+    padding: 15px;
+    @include mq('sp') {
+        display: block;
+    }
+}
+
+.news-date {
+    margin-right: 84px;
+    width: 84px;
+}
+
+.news-text {
+    width: calc(100% - 168px);
+    @include mq('sp') {
+        width: 100%;
+    }
+}
+
+// ------------------
+// contact
+// ------------------
+.contact {
+    margin-top: 130px;
+}
+
+.form-row {
+    display: flex;
+    dt {
+        width: 117px;
+    }
+    dd {
+        width: calc(100% - 17px);
+    }
+    &:not(:first-child) {
+        margin-top: 10px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        border: #C8C8C8 1px solid;
+        padding: 0.2em 0.5em;
+        box-shadow: none;
+        background: #fff;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: none;
+        color: inherit;
+        font-family: inherit;
+    }
+    textarea {
+        resize: vertical;
+        min-height: 160px;
+    }
+    @include mq('sp') {
+        display: block;
+    }
+}
+
+.form-button {
+    input {
+        padding: 17px;
+        width: 200px;
+        color: #fff;
+        background: $color-text;
+        transition: all .3s;
+        border: $color-text 1px solid;
+        &:hover {
+            color: $color-text;
+            background: #fff;
+        }
+    }
+    text-align: center;
+    padding-bottom: 130px;
+    padding-top: 30px;
+}
+
+// ------------------
+// footer
+// ------------------
+footer {
+    color: #fff;
+    background: $color-text;
+    text-align: center;
+    font-size: 10px;
+    padding: 10px;
+}

@@ -1,0 +1,278 @@
+@charset "UTF-8";
+body {
+  font-family: 'メイリオ', 'Meiryo', 'ＭＳ ゴシック', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
+  font-size: 14.4px;
+  line-height: 1.45833;
+  background: #fff;
+  color: #24292E;
+}
+
+.inner {
+  width: 960px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+a:hover {
+  color: inherit;
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 65px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .title {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sp-none {
+    display: none;
+  }
+}
+
+@media (min-width: 960px) {
+  .pc-none {
+    display: none;
+  }
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 120px 0 122px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    display: block;
+    text-align: center;
+    padding: 20px 0 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-logo {
+    display: inline;
+  }
+}
+
+.header-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-nav ul li:not(:first-child) {
+  margin-left: 30px;
+}
+
+@media (max-width: 600px) {
+  .header-nav ul li:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-nav ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.header-logo {
+  width: 120px;
+  height: auto;
+}
+
+.main {
+  height: 420px;
+  background: url(../img/keyboard-338505_1280.jpg) no-repeat bottom center/cover;
+}
+
+.about {
+  margin-top: 80px;
+}
+
+.about-body p:not(:first-child) {
+  margin-top: 30px;
+}
+
+.works {
+  margin-top: 130px;
+}
+
+@media (max-width: 600px) {
+  .works {
+    margin-top: 70px;
+  }
+}
+
+.works-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: -23px;
+}
+
+@media (max-width: 600px) {
+  .works-items {
+    display: block;
+  }
+}
+
+.work-item {
+  width: calc((100% - 24px * 2) / 3);
+  margin-top: 23px;
+}
+
+.work-item:not(:nth-child(3n + 1)) {
+  margin-left: 24px;
+}
+
+.work-item img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .work-item {
+    width: 100%;
+  }
+  .work-item:not(:nth-child(3n + 1)) {
+    margin-left: 0;
+  }
+}
+
+.news {
+  margin-top: 130px;
+}
+
+@media (max-width: 600px) {
+  .news {
+    margin-top: 70px;
+  }
+}
+
+.news-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: #C8C8C8 1px solid;
+  border-top: #C8C8C8 1px solid;
+  padding: 15px;
+}
+
+@media (max-width: 600px) {
+  .news-item {
+    display: block;
+  }
+}
+
+.news-date {
+  margin-right: 84px;
+  width: 84px;
+}
+
+.news-text {
+  width: calc(100% - 168px);
+}
+
+@media (max-width: 600px) {
+  .news-text {
+    width: 100%;
+  }
+}
+
+.contact {
+  margin-top: 130px;
+}
+
+.form-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form-row dt {
+  width: 117px;
+}
+
+.form-row dd {
+  width: calc(100% - 17px);
+}
+
+.form-row:not(:first-child) {
+  margin-top: 10px;
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row textarea {
+  width: 100%;
+  border: #C8C8C8 1px solid;
+  padding: 0.2em 0.5em;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: #fff;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+.form-row textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    display: block;
+  }
+}
+
+.form-button {
+  text-align: center;
+  padding-bottom: 130px;
+  padding-top: 30px;
+}
+
+.form-button input {
+  padding: 17px;
+  width: 200px;
+  color: #fff;
+  background: #24292E;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border: #24292E 1px solid;
+}
+
+.form-button input:hover {
+  color: #24292E;
+  background: #fff;
+}
+
+footer {
+  color: #fff;
+  background: #24292E;
+  text-align: center;
+  font-size: 10px;
+  padding: 10px;
+}
